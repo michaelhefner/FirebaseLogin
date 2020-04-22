@@ -2,7 +2,6 @@ import {Component} from '@angular/core';
 import * as firebase from 'firebase/app';
 import 'firebase/auth';
 import {AuthService} from './auth/auth.service';
-import {Router} from '@angular/router';
 import {ConfigFile} from '../configFile';
 
 
@@ -14,7 +13,7 @@ import {ConfigFile} from '../configFile';
 export class AppComponent {
   title = 'login';
 
-  constructor(private authService: AuthService, private router: Router) {
+  constructor(private authService: AuthService) {
     firebase.initializeApp(ConfigFile.firebaseConfig);
     authService.authStateListener();
   }
