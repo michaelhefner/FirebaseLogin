@@ -1,4 +1,6 @@
 <section>
+  <span id="error-message">{{errorMessage}}</span>
+
   <form (ngSubmit)="signIn()" [formGroup]="signinForm">
     <label>
       email
@@ -11,5 +13,4 @@
     </label>
     <button [type]="'submit'">Submit</button>
   </form>
-  <span id="error-message">{{errorMessage}}</span>
 </section>

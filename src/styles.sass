@@ -1,6 +1,9 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;300&display=swap')
+
 *
   margin: 0
   padding: 0
+  font-family: 'Roboto', sans-serif
 
 body
   width: 100vw
@@ -16,20 +19,57 @@ a:hover
 
 #error-message
   color: red
-
+  justify-content: center
+  align-items: center
+  text-align: center
 button, #button
-  margin: .4rem
-  padding: .5rem
-  background: white
-  border: solid 1px black
+  padding: .4rem .6rem
+  margin-left: .5rem
+  background: rgba(20, 20, 20, .7)
+  box-shadow: 0 0 8px rgba(25, 25, 25, .5)
+  border-radius: 2px
+  border: none
   font-size: 1rem
-  color: rebeccapurple
+  color: white
   transition: all 500ms ease-in-out
+  width: auto
 
 button:hover, #button:hover
   background: rgba(0, 0, 0, .2)
   color: white
-  border: solid 1px white
+  text-shadow: 0 0 3px black
 
 label
-  margin: .2rem
+  margin: .2rem 0
+  max-width: 100%
+
+input::placeholder
+  color: white
+
+input, input:active, input:focus
+  border: none
+  color: white
+  background: rgba(25, 25, 25, .5)
+  padding: .3rem 1rem
+  line-height: 1.5rem
+  width: 94.5%
+
+
+form
+  display: flex
+  flex-direction: column
+  justify-self: center
+  align-self: center
+  width: 30%
+
+@media (max-width: 70rem)
+  form
+    width: 50%
+
+@media (max-width: 60rem)
+  form
+    width: 60%
+
+@media (max-width: 50rem)
+  form
+    width: 70%

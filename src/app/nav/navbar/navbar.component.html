@@ -1,5 +1,5 @@
 <nav>
   <button (click)="SignIn()" *ngIf="!isSignedIn">Sign In</button>
   <button (click)="SignOut()" *ngIf="isSignedIn">Sign Out</button>
-  <a id="button" routerLink="register">Register as a new user</a>
+  <a *ngIf="!isSignedIn" id="button" routerLink="register">Register</a>
 </nav>

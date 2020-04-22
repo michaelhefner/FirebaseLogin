@@ -22,6 +22,9 @@ export class RegisterComponent implements OnInit {
   }
 
   ngOnInit() {
+    if (this.authService.isAuthenticated()) {
+      this.router.navigate(['']).then(r => console.log(r));
+    }
   }
 
   register() {
