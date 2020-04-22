@@ -11,7 +11,7 @@ import {ConfigFile} from '../configFile';
   styleUrls: ['./app.component.sass']
 })
 export class AppComponent {
-  title = 'login';
+  title = 'firebase-login-template';
 
   constructor(private authService: AuthService) {
     firebase.initializeApp(ConfigFile.firebaseConfig);

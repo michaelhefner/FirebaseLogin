@@ -10,6 +10,7 @@ import 'firebase/firestore';
 
 export class AuthService {
   private signedIn = false;
+  private user = null;
 
   constructor() {
 
@@ -17,8 +18,7 @@ export class AuthService {
 
   authStateListener() {
     firebase.auth().onAuthStateChanged(user => {
-      // console.log('authStateChange:   ' + (user ? user.email : this.signedIn));
-      this.signedIn = user ? true : false;
+      this.signedIn = !!user;
     });
   }
 
@@ -41,7 +41,7 @@ export class AuthService {
   }
 
   signOut() {
-    firebase.auth().signOut().then(result => console.log('Logged Out'));
+    firebase.auth().signOut().then(result => console.log('Logged Out', result));
   }
 
   getCurrentUser() {
@@ -49,10 +49,9 @@ export class AuthService {
   }
 
   registerUser(email: string, password: string) {
-    firebase.auth().createUserWithEmailAndPassword(email, password).catch((error) => {
-      console.log(error);
-      const errorCode = error.code;
-      const errorMessage = error.message;
+    return firebase.auth().createUserWithEmailAndPassword(email, password).then(result => {
+      this.signedIn = !!result;
+      this.user = result;
     });
   }
 }
