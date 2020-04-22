@@ -10,6 +10,7 @@ import {Router} from '@angular/router';
 })
 export class SigninComponent implements OnInit {
 
+  errorMessage: string;
   signinForm = new FormGroup({
     email: new FormControl('', Validators.email),
     password: new FormControl(''),
@@ -27,11 +28,10 @@ export class SigninComponent implements OnInit {
   signIn() {
     this.authService.signin(this.signinForm.value.email, this.signinForm.value.password)
       .then(result => {
-        console.log(result);
         if (result) {
           this.router.navigate(['']);
         }
-      });
+      }).catch(error => this.errorMessage = error.toString());
   }
 
 }
