@@ -18,7 +18,12 @@ export class AuthService {
 
   authStateListener() {
     firebase.auth().onAuthStateChanged(user => {
-      this.signedIn = !!user;
+      if (user) {
+        this.signedIn = true;
+        this.user = user;
+      } else {
+        this.signedIn = false;
+      }
     });
   }
 

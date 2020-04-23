@@ -10,6 +10,7 @@ import {SigninComponent} from './auth/signin/signin.component';
 import {HomeComponent} from './home/home.component';
 import {NavbarComponent} from './nav/navbar/navbar.component';
 import {RegisterComponent} from './auth/register/register.component';
+import {AuthGuard} from './auth/auth-guard.service';
 
 @NgModule({
   declarations: [
@@ -27,7 +28,8 @@ import {RegisterComponent} from './auth/register/register.component';
   ],
   providers: [
     Location, {provide: LocationStrategy, useClass: HashLocationStrategy},
-    AuthService
+    AuthService,
+    AuthGuard
   ],
   bootstrap: [AppComponent]
 })
