@@ -6,7 +6,7 @@ import {AppComponent} from './app.component';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import {HashLocationStrategy, LocationStrategy} from '@angular/common';
 import {AuthService} from './auth/auth.service';
-import {SigninComponent} from './auth/signin/signin.component';
+import {SignInComponent} from './auth/signIn/sign-in.component';
 import {HomeComponent} from './home/home.component';
 import {NavbarComponent} from './nav/navbar/navbar.component';
 import {RegisterComponent} from './auth/register/register.component';
@@ -15,7 +15,7 @@ import {AuthGuard} from './auth/auth-guard.service';
 @NgModule({
   declarations: [
     AppComponent,
-    SigninComponent,
+    SignInComponent,
     RegisterComponent,
     HomeComponent,
     NavbarComponent

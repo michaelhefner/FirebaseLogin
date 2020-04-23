@@ -1,6 +1,6 @@
 import {NgModule} from '@angular/core';
 import {RouterModule, Routes} from '@angular/router';
-import {SigninComponent} from './auth/signin/signin.component';
+import {SignInComponent} from './auth/signIn/sign-in.component';
 import {HomeComponent} from './home/home.component';
 import {RegisterComponent} from './auth/register/register.component';
 import {AuthGuard} from './auth/auth-guard.service';
@@ -12,7 +12,7 @@ const routes: Routes = [{
   component: HomeComponent
 }, {
   path: 'signin',
-  component: SigninComponent
+  component: SignInComponent
 }, {
   path: 'register',
   component: RegisterComponent

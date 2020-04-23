@@ -24,7 +24,6 @@ button, #button
   margin-left: .5rem
   background: rgba(70, 0, 70, .7)
   box-shadow: 0 0 4px rgba(25, 25, 25, .5)
-  text-shadow: 0 0 30px black
   border-radius: 2px
   border: none
   font-size: 1rem
@@ -35,19 +34,18 @@ button, #button
 button:hover, #button:hover
   background: rgba(50, 0, 50, .1)
   color: white
-  text-shadow: 0 0 20px black
 
 label
   margin: .2rem 0
   max-width: 100%
 
 input::placeholder
-  color: white
+  color: black
 
 input, input:active, input:focus
   border: none
-  color: white
-  background: rgba(25, 25, 25, .5)
+  color: black
+  background: rgba(25, 25, 25, .05)
   padding: .3rem 1rem
   line-height: 1.5rem
   width: 94.5%
@@ -59,6 +57,10 @@ form
   justify-self: center
   align-self: center
   width: 30%
+
+#submit:hover
+  color: rebeccapurple
+  background: white
 
 @media (max-width: 70rem)
   form

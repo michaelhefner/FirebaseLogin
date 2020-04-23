@@ -30,7 +30,6 @@ export class RegisterComponent implements OnInit {
   register() {
     if (this.registerForm.value.password === this.registerForm.value.confirmPassword) {
       this.authService.registerUser(this.registerForm.value.email, this.registerForm.value.password)
-        .then(result => this.router.navigate(['']))
         .catch(error => this.error.message = error);
     }
   }
